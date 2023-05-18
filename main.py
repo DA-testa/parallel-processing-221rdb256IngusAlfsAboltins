@@ -1,4 +1,4 @@
-mport heapq
+import heapq
 
 def parallel_processing(n, m, data):
 
