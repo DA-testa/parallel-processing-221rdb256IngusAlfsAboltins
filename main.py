@@ -3,7 +3,7 @@ import heapq
 def parallel_processing(n, m, data):
 
     threads = [(0, i) for i in range(n)]
-
+    data_list = data.split()
    jobq = list(enumerate(data))
 
     output = []
