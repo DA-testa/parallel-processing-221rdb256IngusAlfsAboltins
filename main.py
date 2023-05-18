@@ -11,7 +11,7 @@ def parallel_processing(n, m, data):
 
     while jobq:
        
-        job, job_index = heapq.heappop(job_queue)
+        job, job_index = heapq.heappop(jobq)
       
         start_time, thread_index = heapq.heappop(threads)
 
