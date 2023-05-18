@@ -1,23 +1,33 @@
 def parallel_processing(n, m, data):
+
     threads = [(0, i) for i in range(n)]
-    jobq = list(enumerate(data))
+
+   jobq = list(enumerate(data))
+
     output = []
+    
 
     while jobq:
-        job, job_index = jobq.pop(0)
-        threads.sort()
-        start_time, thread_index = threads.pop(0)
-        output.append((thread_index, start_time))
-        finish_time = start_time + job
-        threads.append((finish_time, thread_index))
-        
+       
+        job, job_index = heapq.heappop(jobq)
+      
+        start_time, thread_index = heapq.heappop(threads)
 
+        output.append((thread_index, start_time))
+      
+        finish_time = start_time + job
+
+        heapq.heappush(threads, (finish_time, thread_index))
+        
     return output
 
 def main():
+
     n, m = map(int, input().split())
     data = list(map(int, input().split()))
+
     result = parallel_processing(n, m, data)
+    
   
     for thread_index, start_time in result:
         print(thread_index, start_time)
