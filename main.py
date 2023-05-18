@@ -2,7 +2,7 @@ def parallel_processing(n, m, data):
 
     threads = [(0, i) for i in range(n)]
 
-    jobq = [(job,) for job in data]
+    jobq = [(job, i) for i, job in enumerate(data)]
 
     output = []
     
@@ -33,4 +33,3 @@ def main():
         print(thread_index, start_time)
 
 if __name__ == "__main__":
-    main()
