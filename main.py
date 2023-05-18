@@ -2,7 +2,7 @@ def parallel_processing(n, m, data):
 
     threads = [(0, i) for i in range(n)]
 
-   jobq = list(enumerate(data))
+    jobq = [(job,) for job in data]
 
     output = []
     
