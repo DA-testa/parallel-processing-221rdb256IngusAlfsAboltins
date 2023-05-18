@@ -5,11 +5,12 @@ def parallel_processing(n, m, data):
 
     while jobq:
         job, job_index = jobq.pop(0)
+        threads.sort()
         start_time, thread_index = threads.pop(0)
         output.append((thread_index, start_time))
         finish_time = start_time + job
         threads.append((finish_time, thread_index))
-        threads.sort()
+        
 
     return output
 
