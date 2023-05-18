@@ -35,3 +35,4 @@ def main():
         print(thread_index, start_time)
 
 if __name__ == "__main__":
+    main()
